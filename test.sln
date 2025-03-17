@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.Nhan", "WinFormsApp2\Mail.Nhan.csproj", "{91F11A8D-7425-40B7-8916-A6110712DA02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.Gui", "Mail.Gui\Mail.Gui.csproj", "{18FC18F2-E6B6-4A32-B0B2-0955DAFB6BA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91F11A8D-7425-40B7-8916-A6110712DA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F11A8D-7425-40B7-8916-A6110712DA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F11A8D-7425-40B7-8916-A6110712DA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F11A8D-7425-40B7-8916-A6110712DA02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18FC18F2-E6B6-4A32-B0B2-0955DAFB6BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FC18F2-E6B6-4A32-B0B2-0955DAFB6BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FC18F2-E6B6-4A32-B0B2-0955DAFB6BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FC18F2-E6B6-4A32-B0B2-0955DAFB6BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EB2AE2E-1580-4EE3-9D75-E626E4169CA8}
+	EndGlobalSection
+EndGlobal
