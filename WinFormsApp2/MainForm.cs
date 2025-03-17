@@ -21,11 +21,7 @@ namespace EmailClient
         private async void btnLoadEmails_Click(object sender, EventArgs e)
         {
             btnLoadEmails.Enabled = false;
-            btnLoadEmails.Text = "Đang tải...";
-
             await Task.Run(() => LoadEmails());
-
-            btnLoadEmails.Text = "Tải Email";
             btnLoadEmails.Enabled = true;
         }
 
@@ -36,20 +32,21 @@ namespace EmailClient
                 using (var client = new ImapClient())
                 {
                     client.Connect("imap.gmail.com", 993, true);
-                    client.Authenticate("n.tuananh.mail@gmail.com", "rdlc anei qbkh cgyj");
+                    client.Authenticate("tuananh12603@gmail.com", "uxxe jxlp rrhj dnkg");
 
                     var inbox = client.Inbox;
                     inbox.Open(FolderAccess.ReadOnly);
 
                     var uids = inbox.Search(SearchQuery.All);
-                    emailMessages.Clear();
+                    uids.Reverse(); // Hiển thị email mới nhất trước
 
+                    emailMessages.Clear();
                     Invoke(new Action(() => listViewEmails.Items.Clear()));
 
                     foreach (var uid in uids)
                     {
                         var message = inbox.GetMessage(uid);
-                        emailMessages.Add(message);
+                        emailMessages.Insert(0, message);
 
                         Invoke(new Action(() =>
                         {
@@ -57,10 +54,9 @@ namespace EmailClient
                             {
                                 message.Subject,
                                 message.From.ToString(),
-                                message.To.ToString(),
-                                message.Date.ToString()
+                                message.Date.ToString("dd/MM/yyyy HH:mm")
                             });
-                            listViewEmails.Items.Add(item);
+                            listViewEmails.Items.Insert(0, item);
                         }));
                     }
 
@@ -78,13 +74,7 @@ namespace EmailClient
             if (listViewEmails.SelectedIndices.Count > 0)
             {
                 int index = listViewEmails.SelectedIndices[0];
-                var email = emailMessages[index];
-
-                txtEmailInfo.Text = $"📌 Tiêu đề: {email.Subject}\r\n" +
-                                    $"✉️ Từ: {email.From}\r\n" +
-                                    $"📩 Đến: {email.To}\r\n" +
-                                    $"🕒 Ngày gửi: {email.Date}\r\n\r\n" +
-                                    $"📄 Nội dung:\r\n{email.TextBody}";
+                textBoxBody.Text = emailMessages[index].TextBody;
             }
         }
     }
