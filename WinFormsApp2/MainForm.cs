@@ -24,8 +24,8 @@ namespace EmailClient
             await Task.Run(() => LoadEmails());
             btnLoadEmails.Enabled = true;
         }
-
-        private void LoadEmails()
+        virtual
+        public void LoadEmails()
         {
             try
             {
@@ -76,6 +76,11 @@ namespace EmailClient
                 int index = listViewEmails.SelectedIndices[0];
                 textBoxBody.Text = emailMessages[index].TextBody;
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,73 +12,72 @@
 
         private void InitializeComponent()
         {
-            this.btnLoadEmails = new System.Windows.Forms.Button();
-            this.listViewEmails = new System.Windows.Forms.ListView();
-            this.columnSubject = new System.Windows.Forms.ColumnHeader();
-            this.columnFrom = new System.Windows.Forms.ColumnHeader();
-            this.columnDate = new System.Windows.Forms.ColumnHeader();
-            this.textBoxBody = new System.Windows.Forms.TextBox();
-
-            this.SuspendLayout();
-
+            btnLoadEmails = new Button();
+            listViewEmails = new ListView();
+            columnSubject = new ColumnHeader();
+            columnFrom = new ColumnHeader();
+            columnDate = new ColumnHeader();
+            textBoxBody = new TextBox();
+            SuspendLayout();
             // 
             // btnLoadEmails
             // 
-            this.btnLoadEmails.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLoadEmails.Location = new System.Drawing.Point(20, 20);
-            this.btnLoadEmails.Size = new System.Drawing.Size(150, 40);
-            this.btnLoadEmails.Text = "Tải Email";
-            this.btnLoadEmails.Click += new System.EventHandler(this.btnLoadEmails_Click);
-
+            btnLoadEmails.Font = new Font("Arial", 10F, FontStyle.Bold);
+            btnLoadEmails.Location = new Point(20, 20);
+            btnLoadEmails.Name = "btnLoadEmails";
+            btnLoadEmails.Size = new Size(150, 40);
+            btnLoadEmails.TabIndex = 0;
+            btnLoadEmails.Text = "Tải Email";
+            btnLoadEmails.Click += btnLoadEmails_Click;
             // 
             // listViewEmails
             // 
-            this.listViewEmails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnSubject,
-            this.columnFrom,
-            this.columnDate});
-            this.listViewEmails.FullRowSelect = true;
-            this.listViewEmails.GridLines = true;
-            this.listViewEmails.Location = new System.Drawing.Point(20, 70);
-            this.listViewEmails.Size = new System.Drawing.Size(600, 300);
-            this.listViewEmails.View = System.Windows.Forms.View.Details;
-            this.listViewEmails.SelectedIndexChanged += new System.EventHandler(this.listViewEmails_SelectedIndexChanged);
-
+            listViewEmails.Columns.AddRange(new ColumnHeader[] { columnSubject, columnFrom, columnDate });
+            listViewEmails.FullRowSelect = true;
+            listViewEmails.GridLines = true;
+            listViewEmails.Location = new Point(20, 70);
+            listViewEmails.Name = "listViewEmails";
+            listViewEmails.Size = new Size(600, 300);
+            listViewEmails.TabIndex = 1;
+            listViewEmails.UseCompatibleStateImageBehavior = false;
+            listViewEmails.View = View.Details;
+            listViewEmails.SelectedIndexChanged += listViewEmails_SelectedIndexChanged;
             // 
             // columnSubject
             // 
-            this.columnSubject.Text = "Chủ đề";
-            this.columnSubject.Width = 250;
+            columnSubject.Text = "Chủ đề";
+            columnSubject.Width = 250;
             // 
             // columnFrom
             // 
-            this.columnFrom.Text = "Người gửi";
-            this.columnFrom.Width = 200;
+            columnFrom.Text = "Người gửi";
+            columnFrom.Width = 200;
             // 
             // columnDate
             // 
-            this.columnDate.Text = "Ngày";
-            this.columnDate.Width = 150;
-
+            columnDate.Text = "Ngày";
+            columnDate.Width = 150;
             // 
             // textBoxBody
             // 
-            this.textBoxBody.Location = new System.Drawing.Point(20, 380);
-            this.textBoxBody.Multiline = true;
-            this.textBoxBody.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxBody.Size = new System.Drawing.Size(600, 150);
-
+            textBoxBody.Location = new Point(20, 380);
+            textBoxBody.Multiline = true;
+            textBoxBody.Name = "textBoxBody";
+            textBoxBody.ScrollBars = ScrollBars.Vertical;
+            textBoxBody.Size = new Size(600, 150);
+            textBoxBody.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(650, 550);
-            this.Controls.Add(this.btnLoadEmails);
-            this.Controls.Add(this.listViewEmails);
-            this.Controls.Add(this.textBoxBody);
-            this.Text = "Trình Nhận Email";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(650, 550);
+            Controls.Add(btnLoadEmails);
+            Controls.Add(listViewEmails);
+            Controls.Add(textBoxBody);
+            Name = "MainForm";
+            Text = "Trình Nhận Email";
+            Load += MainForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

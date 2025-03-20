@@ -9,12 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EmailClient" Version="0.0.0.1" />
     <PackageReference Include="MailKit" Version="4.11.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\WinFormsApp2\Mail.Nhan.csproj" />
   </ItemGroup>
 
 </Project>
